@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-size: 18px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.astro-code {
+  border-radius: 10px;
+  border: 2px solid white;
+  margin-bottom: 1rem;
+  padding: 16px;
+}

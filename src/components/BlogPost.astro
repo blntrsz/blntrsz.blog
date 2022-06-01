@@ -9,17 +9,13 @@ export interface Props {
 const { title, publishDate, heroImage, alt } = Astro.props;
 ---
 
-<div class="layout">
-	<article>
-		<div>
-			<header>
-				{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
-				<p class="text-zinc-600">{publishDate}</p>
-				<h1 class="text-xl">{title}</h1>
-			</header>
-			<main>
-				<slot />
-			</main>
-		</div>
-	</article>
-</div>
+<article class="mt-4">
+	<header>
+		{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
+		<span class="text-zinc-400">{publishDate}</span>
+		<h1 class="text-3xl text-[#FF7B72]">{title}</h1>
+	</header>
+	<main>
+		<slot />
+	</main>
+</article>

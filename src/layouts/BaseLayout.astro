@@ -1,0 +1,35 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/BlogHeader.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  permalink?: string;
+  hasPrism?: boolean
+}
+
+const {
+  title = 'Balint Orosz\'s blog',
+  description = 'I write about tech.',
+  permalink = 'https://blntrsz.com/',
+  hasPrism = false
+} = Astro.props as Props;
+---
+
+<html lang="en">
+
+<head>
+  <BaseHead {title} {description} {permalink} />
+  { hasPrism &&
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css" />}
+</head>
+
+<body class="bg-[#0d1117] text-white max-w-4xl m-auto p-4">
+  <BlogHeader />
+  <main>
+    <slot />
+  </main>
+</body>
+
+</html>

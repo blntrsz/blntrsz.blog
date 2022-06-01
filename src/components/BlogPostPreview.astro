@@ -6,12 +6,14 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="post-preview">
-	<header>
-		<p class="text-zinc-600">{post.frontmatter.publishDate}</p>
-		<a href={post.url}>
-			<h1 class="title">{post.frontmatter.title}</h1>
-		</a>
-	</header>
-	<p>{post.frontmatter.description}</p>
+<article class="border-b-2 last:border-none">
+	<a href={post.url}>
+		<div class="py-4">
+			<header>
+				<span class="text-zinc-400">{post.frontmatter.publishDate}</span>
+				<h4 class="text-2xl">{post.frontmatter.title}</h4>
+			</header>
+			<span class="text-md">{post.frontmatter.description}</span>
+		</div>
+	</a>
 </article>

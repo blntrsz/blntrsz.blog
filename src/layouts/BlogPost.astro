@@ -1,27 +1,24 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
 import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from './BaseLayout.astro';
 
 
-const { content } = Astro.props;
-const { title, description, publishDate, author, heroImage, permalink, alt } = content;
+const {
+	content: {
+		title,
+		description,
+		publishDate,
+		author,
+		heroImage,
+		permalink,
+		alt
+	}
+} = Astro.props;
 ---
 
-<html lang={content.lang || 'en' }>
-
-<head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css" />
-	<BaseHead {title} {description} {permalink} />
-</head>
-
-<body class="bg-[#0d1117] text-white max-w-50 m-auto p-4">
-	<BlogHeader />
-	<div class="wrapper">
-		<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
-			<slot />
-		</BlogPost>
-	</div>
-</body>
-
-</html>
+<BaseLayout hasPrism {title} {description} {permalink}>
+	<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+		<slot />
+	</BlogPost>
+</BaseLayout>

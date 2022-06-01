@@ -1,46 +1,17 @@
 ---
-// Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortByDate } from '../utils/sort-by-date';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-const title = 'Example Blog';
-const description = 'The perfect starter for your perfect blog.';
-const permalink = 'https://example.com/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const allPosts = (await Astro.glob('./posts/*.md')).sort(sortByDate).slice(0, 5);
 ---
 
-<html lang="en">
-
-<head>
-	<BaseHead {title} {description} {permalink} />
-</head>
-
-<body class="bg-[#0d1117] text-white m-auto p-4">
-	<BlogHeader />
-	<div class="max-w-50">
-		<main class="content">
-			<section class="intro">
-				<h1 class="latest">{title}</h1>
-				<p>{description}</p>
-			</section>
-			<section aria-label="Blog post list">
-				{allPosts.map((p) =>
-				<BlogPostPreview post={p} />)}
-			</section>
-		</main>
+<BaseLayout>
+	<section aria-label="Blog post list">
+		{allPosts.map((p) =>
+		<BlogPostPreview post={p} />)}
+	</section>
+	<div class="flex justify-center">
+		<a href="/posts">show all posts</a>
 	</div>
-</body>
-
-</html>
+</BaseLayout>
