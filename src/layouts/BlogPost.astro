@@ -1,8 +1,6 @@
 ---
-import BlogHeader from '../components/BlogHeader.astro';
 import BlogPost from '../components/BlogPost.astro';
 import BaseLayout from './BaseLayout.astro';
-
 
 const {
 	content: {
@@ -17,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout hasPrism {title} {description} {permalink}>
+<BaseLayout hasPrism={true} {title} {description} {permalink}>
 	<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
 		<slot />
 	</BlogPost>

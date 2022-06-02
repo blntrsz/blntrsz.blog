@@ -11,14 +11,20 @@ module.exports = {
         h1: {
           fontSize: theme("fontSize.2xl"),
           marginBottom: "1.5rem",
+          color: "#FF7B72",
         },
         h2: {
           fontSize: theme("fontSize.xl"),
           marginBottom: "1.5rem",
+          color: "#FF7B72",
         },
         h3: {
           fontSize: theme("fontSize.lg"),
           marginBottom: "1.5rem",
+          color: "#FF7B72",
+        },
+        h4: {
+          color: "#FF7B72",
         },
         p: {
           marginBottom: "1rem",

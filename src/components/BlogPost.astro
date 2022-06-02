@@ -13,7 +13,7 @@ const { title, publishDate, heroImage, alt } = Astro.props;
 	<header>
 		{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
 		<span class="text-zinc-400">{publishDate}</span>
-		<h1 class="text-3xl text-[#FF7B72]">{title}</h1>
+		<h1 class="text-3xl">{title}</h1>
 	</header>
 	<main>
 		<slot />

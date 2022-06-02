@@ -5,13 +5,13 @@ specifiers:
   '@astrojs/sitemap': ^0.1.0
   '@astrojs/tailwind': ^0.2.1
   astro: ^1.0.0-beta.36
-  preact: ^10.7.2
+  clipboard.js: ^1.0.1
 
 dependencies:
-  preact: 10.7.2
+  clipboard.js: 1.0.1
 
 devDependencies:
-  '@astrojs/preact': 0.1.2_preact@10.7.2
+  '@astrojs/preact': 0.1.2
   '@astrojs/sitemap': 0.1.0
   '@astrojs/tailwind': 0.2.1
   astro: 1.0.0-beta.36
@@ -78,15 +78,14 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/preact/0.1.2_preact@10.7.2:
+  /@astrojs/preact/0.1.2:
     resolution: {integrity: sha512-u9LUq0/0mCvNkl0Z3Ezj8iqV6tz60dxkmUyOwGVh9RG/dqKswyZeOV7xWC5zxBkH8zufh7l58PHrFCIe+rM1pA==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       preact: ^10.6.5
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.17.12
-      preact: 10.7.2
-      preact-render-to-string: 5.2.0_preact@10.7.2
+      preact-render-to-string: 5.2.0
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -903,6 +902,10 @@ packages:
     resolution: {integrity: sha512-x/5fWmGMnbKQAaNwN+UZlV79qBLM9JFnJuJ03gIi5whrob0xV0ofNVHy9DhwGdsMJQc2OKv0oGmLzvaqvAVv+g==}
     engines: {node: '>=6'}
     dev: true
+
+  /clipboard.js/1.0.1:
+    resolution: {integrity: sha512-nSisUM0ldlNKMvovyNdDv2UJHYKeStbiNk5Q+e6sxtIDB7z0pQcZVGynBKz/PxE5zbjsyQ8b9BhhJk63KafjNQ==}
+    dev: false
 
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
@@ -2930,18 +2933,13 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact-render-to-string/5.2.0_preact@10.7.2:
+  /preact-render-to-string/5.2.0:
     resolution: {integrity: sha512-+RGwSW78Cl+NsZRUbFW1MGB++didsfqRk+IyRVTaqy+3OjtpKK/6HgBtfszUX0YXMfo41k2iaQSseAHGKEwrbg==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.7.2
       pretty-format: 3.8.0
     dev: true
-
-  /preact/10.7.2:
-    resolution: {integrity: sha512-GLjn0I3r6ka+NvxJUppsVFqb4V0qDTEHT/QxHlidPuClGaxF/4AI2Qti4a0cv3XMh5n1+D3hLScW10LRIm5msQ==}
-    dev: false
 
   /preferred-pm/3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}

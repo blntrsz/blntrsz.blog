@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "new": "cp ./common/default.layout.md ./src/pages/posts/new.md"
   },
   "devDependencies": {
     "@astrojs/preact": "^0.1.2",
@@ -15,6 +16,6 @@
     "astro": "^1.0.0-beta.36"
   },
   "dependencies": {
-    "preact": "^10.7.2"
+    "clipboard.js": "^1.0.1"
   }
 }
