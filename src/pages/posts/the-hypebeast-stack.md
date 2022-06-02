@@ -3,16 +3,35 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: WIP - The Hypebeast stack
 publishDate: 02 Jun 2022
+tags:
+  [
+    "tailwindcss",
+    "css",
+    "typescript",
+    "nextjs",
+    "vercel",
+    "prisma",
+    "trpc",
+    "planetscale",
+  ]
 description: Let's initialize The Hypebeast stack which it an end-to-end typed full-stack TypeScript application.
 ---
 
-End to end typed full stack application starter. This let's you initialize a [TypeScript](https://www.typescriptlang.org/) project with [Next.js](https://nextjs.org/), [tRPC](https://trpc.io/), [Prisma](https://www.prisma.io/) and [PlanetScale](https://planetscale.com/), hosted on [Vercel](https://vercel.com/). Let's start with a Next.js part with TypeScript template:
+End-to-end typed full stack application starter. This let's you initialize a [TypeScript](https://www.typescriptlang.org/) project with [Next.js](https://nextjs.org/), [tRPC](https://trpc.io/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/) and [PlanetScale](https://planetscale.com/), hosted on [Vercel](https://vercel.com/). Let's start with a Next.js part with TypeScript template:
 
 ```bash
 pnpm create next-app -- --ts
 ```
 
-We use pnpm as it is the superior package manager. Next, add tRPC:
+We use pnpm as it is the superior package manager. Next, add Tailwind.
+
+# Add Tailwind CSS
+
+Utility classed rocks. Especially Tailwind CSS, so let's add it to our project:
+
+[Add Tailwind CSS to Next.js](./add-tailwind-css-to-next-js)
+
+# End to End type safety with tRPC
 
 ```bash
 pnpm add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query

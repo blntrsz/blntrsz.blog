@@ -6,7 +6,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="border-b-2 last:border-none">
+<div class="border-b-2 last:border-none">
 	<a href={post.url}>
 		<div class="py-4">
 			<header>
@@ -16,4 +16,4 @@ const { post } = Astro.props;
 			<span class="text-md">{post.frontmatter.description}</span>
 		</div>
 	</a>
-</article>
+</div>
