@@ -7,15 +7,16 @@ publishDate: 02 Jun 2022
 description: Step by step guide on how to add Tailwind CSS to a Next.js project
 ---
 
-First and foremost, install the dependencies:
+First and foremost, install the dependencies and add Tailwind config:
 
 ```bash
 pnpm add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-# Add tailwind configuration
+# Change tailwind configuration
 
-In order to tell Tailwind where to look for utility classed we have to tell it where to look:
+In order to tell Tailwind where to look for utility classed we have to add the following lines:
 
 ```diff
 module.exports = {
@@ -32,7 +33,7 @@ module.exports = {
 
 # Add the transpiled css to the app
 
-We need to define where Tailwind should generate the the css:
+We need to define where Tailwind should generate the css:
 
 ```sass
 // styles/globals.css

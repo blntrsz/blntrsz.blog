@@ -11,7 +11,7 @@ const allPosts = (await Astro.glob('./posts/*.md')).sort(sortByDate).slice(0, 5)
 		{allPosts.map((p) =>
 		<BlogPostPreview post={p} />)}
 	</section>
-	<div class="flex justify-center text-[#FFA657]">
+	<div class="flex justify-center mt-8 text-[#FFA657]">
 		<a href="/posts">show all posts</a>
 	</div>
 </BaseLayout>

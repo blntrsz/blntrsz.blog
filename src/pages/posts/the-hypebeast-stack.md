@@ -3,17 +3,7 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: WIP - The Hypebeast stack
 publishDate: 02 Jun 2022
-tags:
-  [
-    "tailwindcss",
-    "css",
-    "typescript",
-    "nextjs",
-    "vercel",
-    "prisma",
-    "trpc",
-    "planetscale",
-  ]
+tags: ["tailwindcss", "css", "typescript", "nextjs", "prisma", "trpc"]
 description: Let's initialize The Hypebeast stack which it an end-to-end typed full-stack TypeScript application.
 ---
 
@@ -31,123 +21,14 @@ Utility classed rocks. Especially Tailwind CSS, so let's add it to our project:
 
 [Add Tailwind CSS to Next.js](./add-tailwind-css-to-next-js)
 
-# End to End type safety with tRPC
+# Add tRPC
 
-```bash
-pnpm add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query
-```
+It is the best thing since slice bread. It provides end-to-end type safety in TypeScript without compromise. If something changes in the backend, we get a type error on the frontend and vice versa.
 
-Now, let's make the TypeScript checking stricter, as the tRPC documentation suggests:
+[Add tRPC to Next.js](./add-trpc-to-next-js)
 
-```json
-// tsconfig.json
-{
-  // ...
-  "compilerOptions": {
-    // ...
-    "strict": true,
-    "strictNullChecks": true
-    // ...
-  }
-}
-```
+# Configure Prisma with PlanetScale
 
-# Add the tRPC as an API route for Next.js:
+Prisma is the right abstraction for an ORM. It is and essential tool for SQL handling inside TypeScript.
 
-```ts
-// ./pages/api/trpc/[trpc].ts
-
-import * as trpc from "@trpc/server";
-import * as trpcNext from "@trpc/server/adapters/next";
-import { z } from "zod";
-
-export const appRouter = trpc.router().query("hello", {
-  input: z
-    .object({
-      text: z.string().nullish(),
-    })
-    .nullish(),
-  resolve({ input }) {
-    return {
-      greeting: `hello ${input?.text ?? "world"}`,
-    };
-  },
-});
-
-// export type definition of API
-export type AppRouter = typeof appRouter;
-
-// export API handler
-export default trpcNext.createNextApiHandler({
-  router: appRouter,
-  createContext: () => null,
-});
-```
-
-# Create tRPC hook:
-
-```ts
-// utils/trpc.ts
-
-import { createReactQueryHooks } from "@trpc/react";
-import type { AppRouter } from "../pages/api/trpc/[trpc]";
-
-export const trpc = createReactQueryHooks<AppRouter>();
-// => { useQuery: ..., useMutation: ...}
-```
-
-# Config \_app.tsx:
-
-```ts
-import { withTRPC } from "@trpc/next";
-import { AppType } from "next/dist/shared/lib/utils";
-import { AppRouter } from "./api/trpc/[trpc]";
-
-const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
-
-export default withTRPC<AppRouter>({
-  config({ ctx }) {
-    /**
-     * If you want to use SSR, you need to use the server's full URL
-     * @link https://trpc.io/docs/ssr
-     */
-    const url = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/api/trpc`
-      : "http://localhost:3000/api/trpc";
-
-    return {
-      url,
-      /**
-       * @link https://react-query.tanstack.com/reference/QueryClient
-       */
-      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
-    };
-  },
-  /**
-   * @link https://trpc.io/docs/ssr
-   */
-  ssr: true,
-})(MyApp);
-```
-
-# Make API request:
-
-```ts
-// pages/index.ts
-
-import { trpc } from "../utils/trpc";
-
-export default function IndexPage() {
-  const hello = trpc.useQuery(["hello", { text: "client" }]);
-  if (!hello.data) {
-    return <div>Loading...</div>;
-  }
-  return (
-    <div>
-      <p>{hello.data.greeting}</p>
-    </div>
-  );
-}
-```
+[Configure Prisma and PlanetScale for Next.js](./configure-prisma-and-planetscape-for-next-js)

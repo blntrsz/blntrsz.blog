@@ -12,6 +12,12 @@ body {
   padding: 16px;
 }
 
+p > code {
+  background-color: #1E293B;
+  border-radius: 5px;
+  padding: 0 6px;
+}
+
 article a {
   text-decoration: underline;
   text-decoration-color: #79C0FF;
