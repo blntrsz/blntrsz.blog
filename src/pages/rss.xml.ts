@@ -1,12 +1,6 @@
 import rss from '@astrojs/rss';
 import { BASE_URL, DESCRIPTION, TITLE } from '../constants/site';
-import { sortByDate } from '../utils/sort-by-date';
 
-// const items = Object.fromEntries(
-//     Object.entries(import.meta.glob('./posts/*.md')
-//   ).sort(sortByDate).slice(0, 5));
-
-console.log(import.meta.glob('./posts/*.md'))
 
 export const get = () => rss({
     // `<title>` field in output xml
