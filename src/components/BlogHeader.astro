@@ -1,7 +1,23 @@
+---
+import { Rss, GitHub, Linkedin } from 'astro-feather-icons'
+import HeaderIcon from './HeaderIcon.astro';
+---
+
 <header class="max-w-5xl">
-	<div class="flex py-4 items-center">
+	<div class="flex py-4 items-center justify-between">
 		<a href="/">
 			<span class="text-2xl font-bold">blntrsz</span>
 		</a>
+		<div class="flex justify-between w-24">
+			<HeaderIcon href="/rss.xml">
+				<Rss size={20} />
+			</HeaderIcon>
+			<HeaderIcon href="https://www.linkedin.com/in/balint-orosz-12913a10a">
+				<Linkedin size={20} />
+			</HeaderIcon>
+			<HeaderIcon href="https://github.com/blntrsz">
+				<GitHub size={20} />
+			</HeaderIcon>
+		</div>
 	</div>
 </header>

@@ -10,12 +10,12 @@
     "new": "cp ./common/default.layout.md ./src/pages/posts/new.md"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.1.2",
     "@astrojs/sitemap": "^0.1.0",
     "@astrojs/tailwind": "^0.2.1",
     "astro": "^1.0.0-beta.36"
   },
   "dependencies": {
-    "clipboard.js": "^1.0.1"
+    "@astrojs/rss": "^0.2.0",
+    "astro-feather-icons": "^1.0.2"
   }
 }

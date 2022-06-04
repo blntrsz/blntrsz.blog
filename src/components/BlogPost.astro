@@ -1,18 +1,26 @@
 ---
+import { Link, GitHub } from 'astro-feather-icons'
+
 export interface Props {
 	title: string;
-	publishDate: string;
+	pubDate: string;
 	heroImage: string;
 	alt: string;
+	github?: string;
+	url?: string;
 }
 
-const { title, publishDate, heroImage, alt } = Astro.props;
+const { title, pubDate, heroImage, alt, url, github } = Astro.props;
 ---
 
 <article class="mt-4">
 	<header>
 		{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
-		<span class="text-zinc-400">{publishDate}</span>
+		<div>
+		<span class="text-zinc-400 mr-4">{pubDate}</span>
+		{github && <a target="_blank" href={github} class="text-zinc-400 mr-4"><GitHub size={16} /></a>}
+		{url && <a target="_blank" href={url} class="text-zinc-400"><Link size={16} /></a>}
+		</div>
 		<h1 class="text-3xl">{title}</h1>
 	</header>
 	<main>

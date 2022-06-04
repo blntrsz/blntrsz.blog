@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
+import { BASE_URL, DESCRIPTION, TITLE } from '../constants/site';
 
 interface Props {
   title?: string;
@@ -10,9 +11,9 @@ interface Props {
 }
 
 const {
-  title = 'Balint Orosz\'s blog',
-  description = 'I write about tech.',
-  permalink = 'https://blntrsz.com/',
+  title = TITLE,
+  description = DESCRIPTION,
+  permalink = BASE_URL,
   hasPrism = false
 } = Astro.props as Props;
 ---

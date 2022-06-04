@@ -2,9 +2,10 @@
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: Add tRPC to Next.js
-publishDate: 03 Jun 2022
+pubDate: 03 Jun 2022
 tags: ["typescript", "trpc", "nextjs"]
 description: Step by step guide on how to add tRPC to a Next.js project
+github: https://github.com/blntrsz/hypebeast-stack
 ---
 
 It's dependency time:

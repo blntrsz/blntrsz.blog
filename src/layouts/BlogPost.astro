@@ -6,17 +6,13 @@ const {
 	content: {
 		title,
 		description,
-		publishDate,
-		author,
-		heroImage,
 		permalink,
-		alt
 	}
 } = Astro.props;
 ---
 
 <BaseLayout hasPrism={true} {title} {description} {permalink}>
-	<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+	<BlogPost {...Astro.props.content}>
 		<slot />
 	</BlogPost>
 </BaseLayout>

@@ -2,9 +2,10 @@
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: Configure Prisma and PlanetScale for Next.js
-publishDate: 03 Jun 2022
+pubDate: 03 Jun 2022
 tags: ["typescript", "prisma"]
 description: Prisma is the best ORM for TypeScript so let's add it to our project
+github: https://github.com/blntrsz/hypebeast-stack
 ---
 
 First, let's install the necessary dependencies:

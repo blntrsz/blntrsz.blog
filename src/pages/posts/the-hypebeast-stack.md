@@ -1,10 +1,11 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-title: WIP - The Hypebeast stack
-publishDate: 02 Jun 2022
+title: The Hypebeast stack
+pubDate: 02 Jun 2022
 tags: ["tailwindcss", "css", "typescript", "nextjs", "prisma", "trpc"]
 description: Let's initialize The Hypebeast stack which it an end-to-end typed full-stack TypeScript application.
+github: https://github.com/blntrsz/hypebeast-stack
 ---
 
 End-to-end typed full stack application starter. This let's you initialize a [TypeScript](https://www.typescriptlang.org/) project with [Next.js](https://nextjs.org/), [tRPC](https://trpc.io/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/) and [PlanetScale](https://planetscale.com/), hosted on [Vercel](https://vercel.com/). Let's start with a Next.js part with TypeScript template:
@@ -32,3 +33,5 @@ It is the best thing since slice bread. It provides end-to-end type safety in Ty
 Prisma is the right abstraction for an ORM. It is and essential tool for SQL handling inside TypeScript.
 
 [Configure Prisma and PlanetScale for Next.js](./configure-prisma-and-planetscape-for-next-js)
+
+And we are ready to build the next unicorn!

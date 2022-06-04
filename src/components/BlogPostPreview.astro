@@ -10,7 +10,7 @@ const { post } = Astro.props;
 	<a href={post.url}>
 		<div class="py-4">
 			<header>
-				<span class="text-zinc-400">{post.frontmatter.publishDate}</span>
+				<span class="text-zinc-400">{post.frontmatter.pubDate}</span>
 				<h4 class="text-2xl">{post.frontmatter.title}</h4>
 			</header>
 			<span class="text-md">{post.frontmatter.description}</span>
