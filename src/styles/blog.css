@@ -27,6 +27,6 @@ article a:hover {
   color: #79C0FF;
 }
 
-svg {
+body svg {
   display: inline;
 }
