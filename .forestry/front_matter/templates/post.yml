@@ -5,6 +5,9 @@ fields:
 - type: text
   name: setup
   label: setup
+  default: import Layout from '../../layouts/BlogPost.astro'
+  config:
+    required: true
 - type: text
   name: title
   label: title
@@ -14,6 +17,8 @@ fields:
 - type: datetime
   name: pubDate
   label: pubDate
+  config:
+    required: true
 - type: text
   name: description
   label: description
