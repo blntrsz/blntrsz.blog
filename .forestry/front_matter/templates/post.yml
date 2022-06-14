@@ -1,0 +1,22 @@
+---
+label: Post
+hide_body: false
+fields:
+- type: text
+  name: setup
+  label: setup
+- type: text
+  name: title
+  label: title
+- type: list
+  name: tags
+  label: tags
+- type: datetime
+  name: pubDate
+  label: pubDate
+- type: text
+  name: description
+  label: description
+- type: text
+  name: github
+  label: github
