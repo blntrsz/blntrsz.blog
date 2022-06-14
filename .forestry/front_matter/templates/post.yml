@@ -19,6 +19,8 @@ fields:
   label: pubDate
   config:
     required: true
+    date_format: ''
+    export_format: DD MMM YYYY
 - type: text
   name: description
   label: description
