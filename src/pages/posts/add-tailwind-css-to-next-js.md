@@ -1,13 +1,16 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+setup: 'import Layout from ''../../layouts/BlogPost.astro''
+
+  '
 title: Add Tailwind CSS to Next.js
-tags: ["tailwindcss", "css"]
-pubDate: 02 Jun 2022
+tags:
+- tailwindcss
+- css
+pubDate: 2022-06-01T22:00:00Z
 description: Step by step guide on how to add Tailwind CSS to a Next.js project
 github: https://github.com/blntrsz/hypebeast-stack
----
 
+---
 First and foremost, install the dependencies and add Tailwind config:
 
 ```bash
