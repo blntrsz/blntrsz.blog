@@ -1,7 +1,7 @@
 ---
 setup: import Layout from '../../layouts/BlogPost.astro'
 title: My Stack
-pubDate: 2022-06-13T22:00:00Z
+pubDate: 2022-05-31T22:00:00Z
 tags:
 - tailwindcss
 - css
