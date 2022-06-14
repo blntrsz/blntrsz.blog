@@ -1,13 +1,18 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+setup: import Layout from '../../layouts/BlogPost.astro'
 title: My Stack
-pubDate: 02 Jun 2022
-tags: ["tailwindcss", "css", "typescript", "nextjs", "prisma", "trpc"]
+pubDate: 2022-06-13T22:00:00Z
+tags:
+- tailwindcss
+- css
+- typescript
+- nextjs
+- prisma
+- trpc
 description: Let's initialize an end-to-end typed full-stack TypeScript application.
 github: https://github.com/blntrsz/my-stack
----
 
+---
 End-to-end typed full stack application starter. This let's you initialize a [TypeScript](https://www.typescriptlang.org/) project with [Next.js](https://nextjs.org/), [tRPC](https://trpc.io/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/) and [PlanetScale](https://planetscale.com/), hosted on [Vercel](https://vercel.com/). Let's start with a Next.js part with TypeScript template:
 
 ```bash
