@@ -28,5 +28,3 @@ fields:
 - type: text
   name: github
   label: github
-pages:
-- src/pages/posts/forestry-test.md
